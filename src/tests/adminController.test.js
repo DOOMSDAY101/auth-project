@@ -1,5 +1,6 @@
 const request = require('supertest');
-const { app, AppDataSource } = require('../../index');
+const { AppDataSource } = require("../../index");
+const app = require("../../index");
 const { generateToken } = require("../utils/jwtUtil");
 const bcrypt = require('bcrypt');
 const Admin = require('../models/adminEntity');
