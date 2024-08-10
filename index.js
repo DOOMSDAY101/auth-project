@@ -16,7 +16,8 @@ app.get('/', (req, res) => {
 app.use('/', authRouter);
 app.use('/', adminRouter)
 
-module.exports = { app, AppDataSource };
+module.exports = app;
+module.exports.AppDataSource = AppDataSource;
 
 if (require.main === module) {
     AppDataSource.initialize()
