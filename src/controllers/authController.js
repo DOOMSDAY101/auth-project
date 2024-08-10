@@ -21,7 +21,7 @@ const register = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password.toString(), 10);
         const admin = adminRepo.create({ username, email, password: hashedPassword });
-        adminRepo.save(admin);
+        await adminRepo.save(admin);
         res.status(201).json({ message: 'Account created successfully' })
     } catch (err) {
         res.status(500).json({ error: 'Registration failed' });

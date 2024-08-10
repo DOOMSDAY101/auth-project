@@ -1,6 +1,7 @@
 const { AppDataSource } = require("../../ormconfig");
 const Admin = require("../models/adminEntity");
 const { validationResult } = require("express-validator");
+const bcrypt = require("bcrypt");
 
 const getAdminProfile = async (req, res) => {
     const AdminEmail = req.body.admin.email;

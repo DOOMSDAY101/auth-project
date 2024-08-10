@@ -16,10 +16,14 @@ app.get('/', (req, res) => {
 app.use('/', authRouter);
 app.use('/', adminRouter)
 
-AppDataSource.initialize()
-    .then(() => {
-        app.listen(PORT, () => {
-            console.log(`app listening on port ${PORT}`)
-        });
-    })
-    .catch(err => console.error(err))
+module.exports = { app, AppDataSource };
+
+if (require.main === module) {
+    AppDataSource.initialize()
+        .then(() => {
+            app.listen(PORT, () => {
+                console.log(`app listening on port ${PORT}`);
+            });
+        })
+        .catch(err => console.error(err));
+}

@@ -96,8 +96,10 @@ http<br>
 `GET /me`<br>
 Authorization: Bearer <JWT_TOKEN>
 
-Profile Update Endpoint
-//any style is allowed for this endpoint
+### Profile Update Endpoint
+
+http<br>
+`PUT /profile`<br>
 
 ```json
 {
